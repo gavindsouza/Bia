@@ -13,36 +13,25 @@ if current english db is unsatisfactory
 advanced applications (as per plan):
 https://www.topbots.com/4-different-approaches-natural-language-processing-understanding/	
 """
-
-from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
+# imports - standard imports
 from itertools import combinations_with_replacement, combinations
 import json
 
-
-def url(site_url, webdriver_path):
-	"""
-	opens the browser and site
-	"""
-	url = site_url #r"https://115.248.171.105:100/"
-	browser = webdriver.Chrome(webdriver_path) #r"C:\Users\Gavin\Desktop\Code\Python\other\chromedriver.exe"
-	browser.get(url)
-
-	browser.close()
+# imports - module imports
+from .browser import *
 
 
 
 def generate_keys(suggested):
 	"""
+	suggested is type(list)
+	pass_list is type(list)
 	Inputs suggested keywords to generate likely list of passwords
 	"""
 	pass_list = []
 	
 	for r in range(11,12):
-		pass_list = [''.join(x) for x in combinations(''.join(['180197','gavin','1997']), r)]
-
+		pass_list = [''.join(x) for x in combinations(''.join(suggested), r)]
 
 	return pass_list
 

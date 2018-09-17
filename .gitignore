@@ -103,5 +103,8 @@ venv.bak/
 # mypy
 .mypy_cache/
 
-#txt others
+# txt others
 git_cmd.txt
+
+# webdrivers
+*.exe
