@@ -1,1 +1,1 @@
-from .bia import *
+from bia.bia import *

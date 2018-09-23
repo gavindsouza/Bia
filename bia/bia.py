@@ -39,7 +39,7 @@ def import_dictionary():
     """
     will be called by generate_keys function: helps search meaningful words
     """
-    dictionary = []
+    word_dictionary = []
     try:
         file = open(r"C:\Users\Gavin\Desktop\data\words_dictionary.json")  # location of your scrambled word file
         fileContents = list(json.load(file).keys())
@@ -47,14 +47,14 @@ def import_dictionary():
         file.close()
     for i in range(len(fileContents)):
         dictionary.extend(fileContents[i].split())  # changes the list by removing \n's from line breaks in text file
-    return dictionary
+    return word_dictionary
 
 
 def import_scrambled_words():
     """
     will be called by the generate_keys function: to check for words
     """
-    scrambledWords = []
+    scrambled_words = []
     try:
         file = """here take input of permutation of select words"""  # location of your scrambled word file
         fileContents = list(json.load(file).keys())
@@ -62,29 +62,29 @@ def import_scrambled_words():
     finally:
         file.close()
     for i in range(len(fileContents)):
-        scrambledWords.extend(
+        scrambled_words.extend(
             fileContents[i].split())  # changes the list by removing \n's from line breaks in text file
-    return scrambledWords
+    return scrambled_words
 
 
-def unscramble_word(scrambledWord):
+def unscramble_word(scrambled_word):
     """
     will be called by generate_keys function: searches meaningful words
     """
-    countToMatch = len(scrambledWord)
+    countToMatch = len(scrambled_word)
     matchedWords = []
     string = ""
 
     for word in dictionary:
         count = 0
-        for x in scrambledWord:
+        for x in scrambled_word:
             if x in word:
                 count += 1
             if count == countToMatch:
                 matchedWords.append(word)
                 break
     for matchedWord in matchedWords:
-        if len(matchedWord) == len(scrambledWord):
+        if len(matchedWord) == len(scrambled_word):
             print(matchedWord)
             string = matchedWord
             break  # this returns only one unscrambles word
