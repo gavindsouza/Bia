@@ -1,3 +1,11 @@
+"""
+overall priority of browser.py: low
+
+number of priority functions:
+medium -> 1
+very low -> 3
+extremely low -> 1
+"""
 # imports - standard imports
 import os
 
@@ -12,18 +20,29 @@ from selenium.webdriver.support import expected_conditions as EC
 # 1. auto form fill bot
 # 2. link checker returns 0/1 bot
 
-def formBot():
+def form_bot():
+    """
+    priority: very low
+    will most likely be redundant
+    :return:
+    """
     # to be auto fill bot
     pass
 
 
-def smartBot():
+def smart_bot():
+    """
+    priority: very low
+    will most likely be redundant
+    :return:
+    """
     # checks only 1 or 0
     pass
 
 
 def url(site_url, webdriver_path):
     """
+    priority: medium
     webdriver testing function
     opens the browser and site
     """
@@ -35,6 +54,10 @@ def url(site_url, webdriver_path):
 
 
 def __get_path_of_chrome_driver():
+    """
+    priority: very low
+    :return:
+    """
     # (finds)? and returns path of webdriver
     # unnecessary: first checks a log file if path(s) exist else searches the whole drive for it
     chrome_path = os.path.abspath(r'\webdriver\chromedriver.exe')
@@ -43,6 +66,12 @@ def __get_path_of_chrome_driver():
 
 
 def __tree(path, *args):
+    """
+    priority: extremely low
+    :param path:
+    :param args:
+    :return:
+    """
     # redundant function
     # from image_delete_from_movies.py
     # refactoring and linking needed

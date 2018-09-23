@@ -1,4 +1,6 @@
 """
+priority of bia.py: high
+
 intended flow:
 1. find min range of password
 2. for each range, check for available words first
@@ -23,6 +25,7 @@ from bia.browser import *
 
 def generate_keys(suggested):
     """
+    priority: high
     suggested is type(list)
     pass_list is type(list)
     Inputs suggested keywords to generate likely list of passwords
@@ -37,6 +40,7 @@ def generate_keys(suggested):
 
 def import_dictionary():
     """
+    priority: high
     will be called by generate_keys function: helps search meaningful words
     """
     word_dictionary = []
@@ -52,6 +56,7 @@ def import_dictionary():
 
 def import_scrambled_words():
     """
+    priority: high
     will be called by the generate_keys function: to check for words
     """
     scrambled_words = []
@@ -69,6 +74,7 @@ def import_scrambled_words():
 
 def unscramble_word(scrambled_word):
     """
+    priority: high
     will be called by generate_keys function: searches meaningful words
     """
     countToMatch = len(scrambled_word)
